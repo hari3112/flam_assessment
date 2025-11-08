@@ -33,4 +33,8 @@ The optimizer searches parameter space to minimize the sum of absolute differenc
 Choosing L-BFGS-B method allows constrained optimization respecting the parameter bounds.
 After optimization, the parameters that best fit the data according to L1 loss are reported.
 
+Visualization or comparison of fitted curve points against original data points using L-BFGS-B algorithm
+
+<img width="1092" height="685" alt="image" src="https://github.com/user-attachments/assets/4f0ead17-f597-4f27-9164-959f81657c8e" />
+
 

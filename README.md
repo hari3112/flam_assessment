@@ -33,9 +33,18 @@ The optimizer searches parameter space to minimize the sum of absolute differenc
 Choosing L-BFGS-B method allows constrained optimization respecting the parameter bounds.
 After optimization, the parameters that best fit the data according to L1 loss are reported.
 
+Here are the optimized parameter values and minimized L1 loss:
+
+Optimized θ (degrees): approximately 28.1184 deg
+Optimized M: 0.021389025229938657
+Optimized X: approximately 54.902077030396846
+Total L1 distance: 37865.09386302573
+
 Visualization or comparison of fitted curve points against original data points using L-BFGS-B algorithm
 
 <img width="1092" height="685" alt="image" src="https://github.com/user-attachments/assets/4f0ead17-f597-4f27-9164-959f81657c8e" />
+
+# Plot in the desmos
 
 <img width="1476" height="520" alt="image" src="https://github.com/user-attachments/assets/8b40e4cf-c93d-49b8-922a-5513c6a824ac" />
 

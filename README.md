@@ -37,4 +37,8 @@ Visualization or comparison of fitted curve points against original data points 
 
 <img width="1092" height="685" alt="image" src="https://github.com/user-attachments/assets/4f0ead17-f597-4f27-9164-959f81657c8e" />
 
+<img width="1476" height="520" alt="image" src="https://github.com/user-attachments/assets/8b40e4cf-c93d-49b8-922a-5513c6a824ac" />
+
+<img width="1853" height="866" alt="image" src="https://github.com/user-attachments/assets/9af4b353-5059-482c-95c0-e6eda4ac949b" />
+
 

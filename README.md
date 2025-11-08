@@ -27,17 +27,13 @@ The parameter t should be sampled uniformly between 6 and 60 at the same points 
 
 Instead of measuring the shortest "as-the-crow-flies" distance like Euclidean distance, L1 distance measures movement restricted to grid-like paths (like city blocks in Manhattan).It sums how far apart the points are in each dimension without squaring or taking square roots.L1 distance is used as the loss metric to measure how closely the parametric curve fits the observed data points.It penalizes deviations linearly, making it robust to outliers compared to squared error losses.
 
-#How L1 regularization affects model coefficients
+# How L1 regularization affects model coefficients
 
 L1 regularization (also known as Lasso regularization) affects model coefficients by adding a penalty equal to the absolute sum of the coefficients to the loss function during model training. This penalty encourages the model to reduce some coefficient values to exactly zero.
-
 Key Effects on Model Coefficients:
 Sparsity: L1 regularization promotes sparsity in the coefficients because it can shrink irrelevant or less important feature weights to zero, effectively removing those features from the model.
-
 Feature Selection: By driving some coefficients to zero, it performs implicit feature selection, simplifying the model and improving interpretability.
-
 Bias-Variance Tradeoff: Increasing the regularization strength makes more coefficients zero, which reduces model complexity and variance but could increase bias (underfitting if too strong).
-
 Grouping Effect: For correlated features, L1 tends to select one representative and zero out the others, unlike L2 which shrinks coefficients smoothly but keeps them non-zero.
 
 

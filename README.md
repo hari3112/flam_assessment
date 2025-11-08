@@ -92,6 +92,7 @@ Total L1 distance: 38096.69310981865
 <img width="1103" height="683" alt="image" src="https://github.com/user-attachments/assets/9d4a486b-39c5-4612-84f8-90104737ab71" />
 
 
+# Comparison Results from other optimizing algorithms
 | Algorithm              | Theta (degrees) | M      | X       | Total L1 Distance | Typical Use                            | Global Search | Notes                                    |
 | ---------------------- | --------------- | ------ | ------- | ----------------- | -------------------------------------- | ------------- | ---------------------------------------- |
 | COBYLA                 | 26.2193         | 0.0166 | 52.0290 | 38096.6931        | Nonlinear constraints, derivative-free | No            | Higher loss, less accurate fit           |

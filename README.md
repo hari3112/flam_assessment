@@ -51,3 +51,11 @@ Visualization or comparison of fitted curve points against original data points 
 <img width="1853" height="866" alt="image" src="https://github.com/user-attachments/assets/9af4b353-5059-482c-95c0-e6eda4ac949b" />
 
 
+| Method                 | Derivatives Needed | Handles Bounds  | Global Search | Typical Use                     |
+| ---------------------- | ------------------ | --------------- | ------------- | ------------------------------- |
+| L-BFGS-B (BFGS)        | Yes                | Yes             | No            | Fast, smooth, bound constraints |
+| Nelder-Mead            | No                 | No (basic)      | No            | Small, unconstrained problems   |
+| Powell                 | No                 | Yes             | No            | Simple, unconstrained or bounds |
+| Differential Evolution | No                 | Yes             | Yes           | Global optimization             |
+| Basin-hopping          | No                 | Yes (with step) | Yes           | Noisy/nonconvex functions       |
+| Trust Region Methods   | Yes                | Yes             | No            | Least-squares, smooth           |

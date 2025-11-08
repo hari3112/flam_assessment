@@ -92,20 +92,19 @@ Total L1 distance: 38096.69310981865
 <img width="1103" height="683" alt="image" src="https://github.com/user-attachments/assets/9d4a486b-39c5-4612-84f8-90104737ab71" />
 
 
-| Algorithm              | Theta (degrees) | M      | X       | Total L1 Distance | Typical Use                            | Global Search |
-| ---------------------- | --------------- | ------ | ------- | ----------------- | -------------------------------------- | ------------- |
-| COBYLA                 | 26.2193         | 0.0166 | 52.0290 | 38096.6931        | Nonlinear constraints, derivative-free | No            |
-| CG                     | 28.0552         | 0.0211 | 54.4689 | 37868.4664        | Large-scale smooth, gradient-based     | No            |
-| L-BFGS-B               | 28.1184         | 0.0214 | 54.9021 | 37865.0939        | Bound constraints, efficient gradient  | No            |
-| TNC                    | 28.2019         | 0.0219 | 54.8985 | 37865.2279        | Bound constrained optimization         | No            |
-| Nelder-Mead            | 28.1184         | 0.0214 | 54.8992 | 37865.0938        | Unconstrained, derivative-free         | No            |
-| Powell                 | 28.1180         | 0.0214 | 54.9113 | 37865.1163        | Bound constrained, derivative-free     | No            |
-| Trust-Region Constr.   | 28.1184         | 0.0214 | 54.8996 | 37865.0938        | Nonlinear constraints, least squares   | No            |
-| SLSQP                  | 28.1185         | 0.0214 | 54.8995 | 37865.0939        | Bound and nonlinear constraints        | No            |
-| Basin-Hopping          | 28.1184         | 0.0214 | 54.9007 | 37865.0938        | Global stochastic-local descent hybrid | Yes           |
-| Simulated Annealing    | 28.1188         | 0.0214 | 54.9003 | 37865.0944        | Global stochastic optimization         | Yes           |
-| Differential Evolution | 28.1185         | 0.0214 | 54.8990 | 37865.0940        | Global evolutionary algorithm          | Yes           |
-
+| Algorithm              | Theta (degrees) | M      | X       | Total L1 Distance | Typical Use                            | Global Search | Notes                                    |
+| ---------------------- | --------------- | ------ | ------- | ----------------- | -------------------------------------- | ------------- | ---------------------------------------- |
+| COBYLA                 | 26.2193         | 0.0166 | 52.0290 | 38096.6931        | Nonlinear constraints, derivative-free | No            | Higher loss, less accurate fit           |
+| CG                     | 28.0552         | 0.0211 | 54.4689 | 37868.4664        | Large-scale smooth, gradient-based     | No            | Close but slightly higher loss           |
+| L-BFGS-B               | 28.1184         | 0.0214 | 54.9021 | 37865.0939        | Bound constraints, efficient gradient  | No            | Best loss value achieved                 |
+| TNC                    | 28.2019         | 0.0219 | 54.8985 | 37865.2279        | Bound constrained optimization         | No            | Very close to L-BFGS-B                   |
+| Nelder-Mead            | 28.1184         | 0.0214 | 54.8992 | 37865.0938        | Unconstrained, derivative-free         | No            | Almost identical results                 |
+| Powell                 | 28.1180         | 0.0214 | 54.9113 | 37865.1163        | Bound constrained, derivative-free     | No            | Almost identical results                 |
+| Trust-Region Constr.   | 28.1184         | 0.0214 | 54.8996 | 37865.0938        | Nonlinear constraints, least squares   | No            | Almost identical results                 |
+| SLSQP                  | 28.1185         | 0.0214 | 54.8995 | 37865.0939        | Bound and nonlinear constraints        | No            | Almost identical results                 |
+| Basin-Hopping          | 28.1184         | 0.0214 | 54.9007 | 37865.0938        | Global stochastic-local descent hybrid | Yes           | Global search; avoids local minima       |
+| Simulated Annealing    | 28.1188         | 0.0214 | 54.9003 | 37865.0944        | Global stochastic optimization         | Yes           | Global search; probabilistic convergence |
+| Differential Evolution | 28.1185         | 0.0214 | 54.8990 | 37865.0940        | Global evolutionary algorithm          | Yes           | Global search; population based          |
 
 
 

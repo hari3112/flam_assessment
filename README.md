@@ -21,10 +21,27 @@ This approach is common in curve fitting, system identification, and classical r
 So to sum up: The process is about estimating the correct parameter values so the model fits the input data well, not about training a machine learning model.
 
 To solve for the unknown parameters θ, M and X in the given parametric equations from the data points, the problem can be approached as a parameter estimation or curve fitting task using optimization.
-The parameter t should be sampled uniformly between 6 and 60 at the same points (or approximate) used to generate data. Let's implement the parametric equations as functions of t,θ,M,X. Convert θ from degrees to radians since trigonometric functions use radians.The objective is to minimize the L1 distance (sum of absolute differences) between the predicted points and the observed points:
+The parameter t should be sampled uniformly between 6 and 60 at the same points (or approximate) used to generate data. Let's implement the parametric equations as functions of t,θ,M,X. Convert θ from degrees to radians since trigonometric functions use radians.The objective is to minimize the L1 distance (sum of absolute differences) between the predicted points and the observed points. L1 distance, also known as Manhattan Distance or Taxicab Distance, is a way to measure the difference between two points (or vectors) by summing the absolute differences of their corresponding components.:
 
 <img width="602" height="70" alt="image" src="https://github.com/user-attachments/assets/9d9dc1d8-3c4c-4b4e-9101-36ead7f3db43" />
 
+Instead of measuring the shortest "as-the-crow-flies" distance like Euclidean distance, L1 distance measures movement restricted to grid-like paths (like city blocks in Manhattan).It sums how far apart the points are in each dimension without squaring or taking square roots.L1 distance is used as the loss metric to measure how closely the parametric curve fits the observed data points.It penalizes deviations linearly, making it robust to outliers compared to squared error losses.
+
+#How L1 regularization affects model coefficients
+
+L1 regularization (also known as Lasso regularization) affects model coefficients by adding a penalty equal to the absolute sum of the coefficients to the loss function during model training. This penalty encourages the model to reduce some coefficient values to exactly zero.
+
+Key Effects on Model Coefficients:
+Sparsity: L1 regularization promotes sparsity in the coefficients because it can shrink irrelevant or less important feature weights to zero, effectively removing those features from the model.
+
+Feature Selection: By driving some coefficients to zero, it performs implicit feature selection, simplifying the model and improving interpretability.
+
+Bias-Variance Tradeoff: Increasing the regularization strength makes more coefficients zero, which reduces model complexity and variance but could increase bias (underfitting if too strong).
+
+Grouping Effect: For correlated features, L1 tends to select one representative and zero out the others, unlike L2 which shrinks coefficients smoothly but keeps them non-zero.
+
+
+It is sensitive to individual coordinate differences and favors sparser differences (useful in some machine learning and optimization contexts).
 Let's use a nonlinear optimization method to find θ,M,X that minimize the loss. 
 The curve parameters θ,M,X influence how the parametric equations generate points.
 
@@ -49,6 +66,8 @@ Visualization or comparison of fitted curve points against original data points 
 <img width="1476" height="520" alt="image" src="https://github.com/user-attachments/assets/8b40e4cf-c93d-49b8-922a-5513c6a824ac" />
 
 <img width="1853" height="866" alt="image" src="https://github.com/user-attachments/assets/9af4b353-5059-482c-95c0-e6eda4ac949b" />
+
+
 
 
 | Method                 | Derivatives Needed | Handles Bounds  | Global Search | Typical Use                     |

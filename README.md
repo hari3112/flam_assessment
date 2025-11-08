@@ -46,6 +46,8 @@ The optimizer searches parameter space to minimize the sum of absolute differenc
 Choosing L-BFGS-B method allows constrained optimization respecting the parameter bounds.
 After optimization, the parameters that best fit the data according to L1 loss are reported.
 
+# L-BFGS-B Algorithm
+
 Here are the optimized parameter values and minimized L1 loss:
 
 Optimized θ (degrees): approximately 28.1184 deg
@@ -64,13 +66,46 @@ Visualization or comparison of fitted curve points against original data points 
 <img width="1853" height="866" alt="image" src="https://github.com/user-attachments/assets/9af4b353-5059-482c-95c0-e6eda4ac949b" />
 
 
+But let's also have a look at the other algorithms execution and how it affects the L1 distance.
 
 
-| Method                 | Derivatives Needed | Handles Bounds  | Global Search | Typical Use                     |
-| ---------------------- | ------------------ | --------------- | ------------- | ------------------------------- |
-| L-BFGS-B (BFGS)        | Yes                | Yes             | No            | Fast, smooth, bound constraints |
-| Nelder-Mead            | No                 | No (basic)      | No            | Small, unconstrained problems   |
-| Powell                 | No                 | Yes             | No            | Simple, unconstrained or bounds |
-| Differential Evolution | No                 | Yes             | Yes           | Global optimization             |
-| Basin-hopping          | No                 | Yes (with step) | Yes           | Noisy/nonconvex functions       |
-| Trust Region Methods   | Yes                | Yes             | No            | Least-squares, smooth           |
+
+# Conjugate Gradient (CG)
+
+Theta (degrees): 28.055194216546376
+M: 0.021130574025268224
+X: 54.468885853563066
+Total L1 distance: 37868.46644682922
+
+<img width="1118" height="683" alt="image" src="https://github.com/user-attachments/assets/86e31e99-f969-474e-bd98-625946231844" />
+
+# COBYLA
+
+Theta (degrees): 26.219343135398617
+M: 0.01661150150455633
+X: 52.02897474329058
+Total L1 distance: 38096.69310981865
+
+<img width="1810" height="793" alt="image" src="https://github.com/user-attachments/assets/507fe4f8-57b5-4c40-aaa6-2de5df80e886" />
+
+
+<img width="1103" height="683" alt="image" src="https://github.com/user-attachments/assets/9d4a486b-39c5-4612-84f8-90104737ab71" />
+
+
+| Algorithm              | Theta (degrees) | M      | X       | Total L1 Distance | Typical Use                            | Global Search |
+| ---------------------- | --------------- | ------ | ------- | ----------------- | -------------------------------------- | ------------- |
+| COBYLA                 | 26.2193         | 0.0166 | 52.0290 | 38096.6931        | Nonlinear constraints, derivative-free | No            |
+| CG                     | 28.0552         | 0.0211 | 54.4689 | 37868.4664        | Large-scale smooth, gradient-based     | No            |
+| L-BFGS-B               | 28.1184         | 0.0214 | 54.9021 | 37865.0939        | Bound constraints, efficient gradient  | No            |
+| TNC                    | 28.2019         | 0.0219 | 54.8985 | 37865.2279        | Bound constrained optimization         | No            |
+| Nelder-Mead            | 28.1184         | 0.0214 | 54.8992 | 37865.0938        | Unconstrained, derivative-free         | No            |
+| Powell                 | 28.1180         | 0.0214 | 54.9113 | 37865.1163        | Bound constrained, derivative-free     | No            |
+| Trust-Region Constr.   | 28.1184         | 0.0214 | 54.8996 | 37865.0938        | Nonlinear constraints, least squares   | No            |
+| SLSQP                  | 28.1185         | 0.0214 | 54.8995 | 37865.0939        | Bound and nonlinear constraints        | No            |
+| Basin-Hopping          | 28.1184         | 0.0214 | 54.9007 | 37865.0938        | Global stochastic-local descent hybrid | Yes           |
+| Simulated Annealing    | 28.1188         | 0.0214 | 54.9003 | 37865.0944        | Global stochastic optimization         | Yes           |
+| Differential Evolution | 28.1185         | 0.0214 | 54.8990 | 37865.0940        | Global evolutionary algorithm          | Yes           |
+
+
+
+
